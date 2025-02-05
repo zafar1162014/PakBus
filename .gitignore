@@ -1,0 +1,182 @@
+# Compiled Output
+bin/
+obj/
+[Dd]ebug/
+[Dd]ebugPublic/
+[Rr]elease/
+[Rr]eleases/
+x64/
+x86/
+bld/
+
+# Visual Studio/IDE Specific.vs/
+_ReSharper*/
+*.[Rr]e[Ss]harper
+*.DotSettings.user.cr/personal
+*.suo
+*.user
+*.userosscache
+*.sln.docstates
+*.userprefs
+*.vssscc
+*.cachefile
+*.sdf
+*.opensdf
+*.sln.iml  # Rider.idea/      # Rider
+*.csproj.user # User-specific project settings
+
+# NuGet Packages
+packages/
+*.nupkg
+*.nuget.props
+*.nuget.targets
+
+# Configuration Files (Careful with these!)
+appsettings.Development.json
+*.config
+*.secrets.json  # VERY IMPORTANT: Never commit secrets!
+*.pubxml
+*.publishproj
+*.azurePubxml
+
+# Docker.dockerignore
+docker-compose.override.yml
+
+# Temporary Files, Logs, Backups
+*.log
+*.tmp
+*.bak
+*.swp
+*.lock
+~$*
+*~
+*.stackdump
+
+# OS Specific.DS_Store      # macOS.AppleDouble    # macOS.LSOverride     # macOS
+Icon            # macOS._*            # macOS.DocumentRevisions-V100 # macOS.fseventsd      # macOS.Spotlight-V100  # macOS.TemporaryItems  # macOS.Trashes        # macOS.VolumeIcon.icns # macOS.com.apple.timemachine.donotpresent # macOS.AppleDB        # macOS.AppleDesktop   # macOS
+Network Trash Folder # macOS
+Temporary Items  # macOS.apdisk         # macOS
+Thumbs.db       # Windows
+ehthumbs.db     # Windows
+ehthumbs_vista.db # Windows
+[Dd]esktop.ini  # Windows
+$RECYCLE.BIN/   # Windows
+
+# Other Files/Folders
+*.userprefs
+*.usertasks
+config.make
+config.status
+aclocal.m4
+install-sh
+autom4te.cache/
+*.tar.gz
+tarballs/
+test-results/
+*.dmg
+*.app
+*.lnk
+*.cab
+*.msi
+*.msix
+*.msm
+*.msp
+*.VisualState.xml
+TestResult.xml
+dlldata.c
+BenchmarkDotNet.Artifacts/
+StyleCopReport.xml
+*_i.c
+*_p.c
+*_h.h
+*.aps
+*.ncb
+*.opendb
+*.VC.db
+*.VC.VC.opendb
+*.psess
+*.vsp
+*.vspx
+*.sap
+*.e2e
+$tf/
+*.gpState
+*.dotCover.axoCover/*!.axoCover/settings.json
+*.coverage
+*.coveragexml
+_NCrunch_*.*crunch*.local.xml
+nCrunchTemp_*
+*.mm.*
+AutoTest.Net/.sass-cache/
+[Ee]xpress/
+DocProject/buildhelp/
+DocProject/Help/*.HxT
+DocProject/Help/*.HxC
+DocProject/Help/*.hhc
+DocProject/Help/*.hhk
+DocProject/Help/*.hhp
+DocProject/Help/Html2
+DocProject/Help/html
+publish/
+*.[Pp]ublish.xml
+*.publishproj
+PublishScripts/
+csx/
+*.build.csdef
+ecf/
+rcf/
+AppPackages/
+BundleArtifacts/
+Package.StoreAssociation.xml
+_pkginfo.txt
+*.appx
+*.[Cc]ache!*.[Cc]ache/
+ClientBin/
+*.dbmdl
+*.dbproj.schemaview
+*.jfm
+*.pfx
+*.publishsettings
+orleans.codegen.cs
+FakesAssemblies/
+*.GhostDoc.xml.ntvs_analysis.dat
+node_modules/
+*.plg
+*.opt
+*.vbw
+**/*.HTMLClient/GeneratedArtifacts
+**/*.DesktopClient/GeneratedArtifacts
+**/*.DesktopClient/ModelManifest.xml
+**/*.Server/GeneratedArtifacts
+**/*.Server/ModelManifest.xml
+_Pvt_Extensions.paket/paket.exe
+paket-files/.fake/
+*.tss
+*.jmconfig
+*.btp.cs
+*.btm.cs
+*.odx.cs
+*.xsd.cs
+OpenCover/
+ASALocalRun/
+*.binlog
+*.nvuser.mfractor/.localhistory/
+*.mdf      # SQL Server database files
+*.ldf      # SQL Server database files
+*.ndf      # SQL Server database files
+*.ldf.bak  # SQL Server log backupdot
+*.mdf.bak  # SQL Server database backup
+*.ndf.bak  # SQL Server database backup
+*.tr*      # SQL Server transaction logs
+*.rptproj.rsuser # Business Intelligence
+*.bim.layout # Business Intelligence
+*.bim_*.settings # Business Intelligence
+*.rdl.data # Business Intelligence
+
+#PakBus Specific
+*.db
+*.suo
+*.scc
+*.sln
+*.csproj.user
+*.user

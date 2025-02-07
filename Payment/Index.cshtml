@@ -1,0 +1,42 @@
+@model PakBus.Models.Booking
+
+@{
+    ViewData["Title"] = "Payment";
+}
+
+<h1>Payment</h1>
+
+<div>
+    <h4>Booking Details</h4>
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Bus.BusNumber)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Bus.BusNumber)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.TotalFare)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.TotalFare)
+        </dd>
+    </dl>
+</div>
+
+<form asp-action="ProcessPayment">
+    <input type="hidden" asp-for="BookingId" />
+    <div class="form-group">
+        <label asp-for="PaymentMethod" class="control-label"></label>
+        <select asp-for="PaymentMethod" class="form-control">
+            <option value="EasyPaisa">EasyPaisa</option>
+            <option value="JazzCash">JazzCash</option>
+            <option value="BankTransfer">Bank Transfer</option>
+        </select>
+        <span asp-validation-for="PaymentMethod" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <input type="submit" value="Pay Now" class="btn btn-primary" />
+    </div>
+</form>

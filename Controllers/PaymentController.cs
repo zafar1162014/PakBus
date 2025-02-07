@@ -14,34 +14,75 @@ namespace PakBus.Controllers
         }
 
         // GET: Payment
-        public IActionResult Index()
+        public IActionResult Index(int bookingId)
         {
+            var booking = _paymentService.GetBookingById(bookingId);
+            if (booking == null)
+            {
+                return NotFound();
+            }
+
+            ViewBag.Booking = booking;
             return View();
         }
 
         // POST: Payment/ProcessPayment
         [HttpPost]
-        public IActionResult ProcessPayment(Payment payment)
+        public IActionResult ProcessPayment(int bookingId, Payment payment)
         {
-            if (ModelState.IsValid)
+            var booking = _paymentService.GetBookingById(bookingId);
+            if (booking == null)
             {
-                // Implement payment processing logic here
-                // This could involve integrating with a payment gateway like EasyPaisa, JazzCash, or Stripe
-                // For this example, we'll simulate successful payment:
-                _paymentService.ProcessPayment(payment);
-
-                return RedirectToAction("PaymentSuccess");
+                return NotFound();
             }
 
-            return View("Index");
+            // **Simulate successful payment for demonstration purposes**
+            // Replace with actual payment gateway integration
+            bool paymentSuccess = true; // Replace with actual payment verification
+
+            if (paymentSuccess)
+            {
+                // Update booking status to paid
+                booking.IsPaid = true;
+                _paymentService.UpdateBooking(booking);
+
+                return RedirectToAction("PaymentSuccess", new { bookingId });
+            }
+            else
+            {
+                // Handle payment failure
+                ModelState.AddModelError("", "Payment failed. Please try again.");
+                return View("Index");
+            }
         }
 
         // GET: Payment/PaymentSuccess
-        public IActionResult PaymentSuccess()
+        public IActionResult PaymentSuccess(int bookingId)
         {
+            var booking = _paymentService.GetBookingById(bookingId);
+            if (booking == null)
+            {
+                return NotFound();
+            }
+
+            ViewBag.Booking = booking;
             return View();
         }
 
         // Other actions for payment history, refunds, etc.
+        public IActionResult PaymentHistory(int userId)
+        {
+            var payments = _paymentService.GetPaymentsByUserId(userId);
+            return View(payments);
+        }
+
+        public IActionResult RefundPayment(int paymentId)
+        {
+            // Implement refund logic here
+            // This could involve reversing the payment or issuing a refund
+            _paymentService.RefundPayment(paymentId);
+
+            return RedirectToAction("PaymentHistory");
+        }
     }
 }

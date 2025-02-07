@@ -1,0 +1,60 @@
+@model PakBus.Models.Bus
+
+@{
+    ViewData["Title"] = "Bus Details";
+}
+
+<h1>Bus Details</h1>
+
+<div>
+    <h4>Bus</h4>
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.BusNumber)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.BusNumber)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.DepartureTime)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.DepartureTime)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.ArrivalTime)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.ArrivalTime)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.DepartureCity)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.DepartureCity)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.ArrivalCity)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.ArrivalCity)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Fare)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Fare)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.SeatsAvailable)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.SeatsAvailable)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-action="Edit" asp-route-id="@Model.BusId">Edit</a> |
+    <a asp-action="Index">Back to List</a>
+</div>

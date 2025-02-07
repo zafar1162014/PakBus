@@ -26,4 +26,36 @@ namespace PakBus.Controllers
             return View();
         }
 
-        public IActionRes
+        public IActionResult Contact()
+        {
+            return View();
+        }
+
+        // Additional actions for PakBus functionality
+
+        public IActionResult BookBus(int busId)
+        {
+            // Logic to book a bus, e.g., redirect to booking form or process booking directly
+            return RedirectToAction("BookingConfirmation", new { busId = busId });
+        }
+
+        public IActionResult BookingConfirmation(int busId)
+        {
+            // Display confirmation message or details of the booking
+            return View();
+        }
+
+        public IActionResult CancelBooking(int bookingId)
+        {
+            // Logic to cancel a booking
+            return RedirectToAction("Index");
+        }
+
+        public IActionResult ViewBookings()
+        {
+            // Logic to retrieve user's booking history
+            var bookings = _busService.GetBookingsForUser(userId); // Replace userId with actual user ID
+            return View(bookings);
+        }
+    }
+}

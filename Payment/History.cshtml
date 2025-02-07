@@ -1,0 +1,31 @@
+@model IEnumerable<PakBus.Models.Payment>
+
+@{
+    ViewData["Title"] = "Payment History";
+}
+
+<h1>Payment History</h1>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>Payment ID</th>
+            <th>Booking ID</th>
+            <th>Amount</th>
+            <th>Payment Method</th>
+            <th>Payment Date</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var payment in Model)
+        {
+            <tr>
+                <td>@payment.PaymentId</td>
+                <td>@payment.BookingId</td>
+                <td>@payment.Amount</td>
+                <td>@payment.PaymentMethod</td>
+                <td>@payment.PaymentDate</td>
+            </tr>
+        }
+    </tbody>
+</table>

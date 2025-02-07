@@ -1,0 +1,39 @@
+@model IEnumerable<PakBus.Models.Booking>
+
+@{
+    ViewData["Title"] = "Bookings";
+}
+
+<h1>Bookings</h1>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>Booking ID</th>
+            <th>Bus Number</th>
+            <th>User Name</th>
+            <th>Booking Date</th>
+            <th>Total Fare</th>
+            <th>Is Paid</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var booking in Model)
+        {
+            <tr>
+                <td>@booking.BookingId</td>
+                <td>@booking.Bus.BusNumber</td>
+                <td>@booking.User.Name</td>
+                <td>@booking.BookingDate</td>
+                <td>@booking.TotalFare</td>
+                <td>@(booking.IsPaid ? "Yes" : "No")</td>
+                <td>
+                    <a asp-action="Details" asp-route-id="@booking.BookingId">Details</a> |
+                    <a asp-action="Edit" asp-route-id="@booking.BookingId">Edit</a> |
+                    <a asp-action="Delete" asp-route-id="@booking.BookingId">Delete</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
